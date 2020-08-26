@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TicTacToe /> renders 1`] = `
+<div
+  class="TicTacToe"
+>
+  <div
+    class="Container"
+  >
+    <div
+      class="instructions"
+    >
+      Next player: X
+    </div>
+    <div
+      class="instructions"
+    >
+      Winner: None
+    </div>
+    <button
+      class="button"
+      type="button"
+    >
+      Reset
+    </button>
+    <div
+      class="Board"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+        <div
+          class="Square"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

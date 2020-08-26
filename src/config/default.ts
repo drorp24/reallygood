@@ -4,12 +4,12 @@ export default {
   API_URL: "https://jsonplaceholder.typicode.com",
   APP: {
     htmlAttributes: { lang: "en" },
-    title: "REACT COOL STARTER",
-    titleTemplate: "REACT COOL STARTER - %s",
+    title: "The Really Good Challenge",
+    titleTemplate: "Really Good Challenge - %s",
     meta: [
       {
         name: "description",
-        content: "The best react universal starter boilerplate in the world.",
+        content: "A React based technical challenge, from Really Good",
       },
     ],
   },

@@ -1,0 +1,43 @@
+.TicTacToe {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    .instructions {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .button {
+      margin-top: 15px;
+      margin-bottom: 16px;
+      width: 80px;
+      height: 40px;
+      background-color: rgb(138, 202, 202);
+      color: white;
+      font-size: 16px;
+    }
+
+    .Board {
+      width: 208px;
+      display: flex;
+      background: #bbb;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: 3px solid #bbb;
+    }
+
+    .row {
+      display: flex;
+    }
+  }
+}
