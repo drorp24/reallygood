@@ -1,7 +1,5 @@
 // @ts-expect-error
-import asyncHome from "./Home";
-// @ts-expect-error
-import asyncUserInfo from "./UserInfo";
+import Home from "./Home";
 import NotFound from "./NotFound";
 
-export { asyncHome, asyncUserInfo, NotFound };
+export { Home, NotFound };

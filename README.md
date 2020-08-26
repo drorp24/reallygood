@@ -14,6 +14,8 @@ You should also implement a function to determine if any player won by getting 3
 
 Submit your code once it is complete as a PR to the `master` branch on this repo (which should be your own private repo on github), and ping us when done.
 
+Don't go into anything server-side/redux related.
+
 _Good luck and enjoy,_
 
 _Really Good_
