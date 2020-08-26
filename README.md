@@ -6,6 +6,8 @@ Based on **React Cool Starter** - its docs are left below for your convenience.
 
 We provided the surrounding project (with React, TypeScript, Jest, CSS Components & HMR for rapid development), so you can focus on the `TicTacToe` component.
 
+Run `yarn` to install deps and `yarn dev` to start a development server for port 3000.
+
 ## Tic Tac Toe - Logic
 
 Your goal is to create a functioning Tic Tac Toe game. It should work the following way: the first player to go places an X anywhere on the board by clicking a square, and then the next player will be able to place an O, and it continues alternating like this every turn.
