@@ -18,6 +18,14 @@ Submit your code once it is complete as a PR to the `master` branch on this repo
 
 Don't go into anything server-side/redux related.
 
+## Tic Tac Toe - Part II, UI
+
+Only once the Logic PR is submitted, create a new branch deriving from the logic branch and work to make the UI closely match the following design:
+
+![Preview](tic-tac-toe-preview.jpg)
+
+**Ping us to get a Zeplin invite to this project**. We understand this may be a lot, so try not to spend over two hours with this part, and prioritize as you see fit.
+
 _Good luck and enjoy,_
 
 _Really Good_
