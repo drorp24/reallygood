@@ -40,7 +40,7 @@ export default memo(
     // Since we're checking this following every move, a potential win can only occur in either
     //   -- the last move's line or row (i.e., no need to check all other lines and rows), or
     //   -- any of the 2 diagonals (in case line & row happen to be placed on either)
-    const winning = ({ currentPlayer, line, row }) =>
+    const winning = ({ line, row }) =>
       board[line].every((_, row) => board[line][row] === currentPlayer) ||
       board.reduce(
         (acc, _, line) => acc && board[line][row] === currentPlayer,
@@ -65,7 +65,7 @@ export default memo(
         board[line][row] = currentPlayer;
         setBoard(board);
         setMoves(moves + 1);
-        if (winning({ currentPlayer, line, row })) {
+        if (winning({ line, row })) {
           setWinner(currentPlayer);
           setGameOver(true);
         } else if (moves === squares) {
@@ -85,7 +85,7 @@ export default memo(
         {item.map((_, row) => (
           <Square
             key={`${line}${row}`}
-            {...{ board, line, row, currentPlayer, handleClick }}
+            {...{ board, line, row, handleClick }}
           />
         ))}
       </div>
@@ -103,6 +103,7 @@ export default memo(
             Next player: {gameOver ? "Game Over" : currentPlayer}
           </div>
           <div className={styles.instructions}>
+            {/* I know you wanted to write nothing if no one wins */}
             Winner: {gameOver && !winner ? "Tie!" : winner}
           </div>
           <button className={styles.button} type="button" onClick={reset}>

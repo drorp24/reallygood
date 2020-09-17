@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 // To do that I would need to control the styling of the Square component from its parent
 // and '...rest' could help in that.
 export default memo(
-  ({ board, line, row, currentPlayer, handleClick, ...rest }): JSX.Element => (
+  ({ board, line, row, handleClick, ...rest }): JSX.Element => (
     <div
       className={styles.Square}
       onClick={handleClick({ line, row })}
