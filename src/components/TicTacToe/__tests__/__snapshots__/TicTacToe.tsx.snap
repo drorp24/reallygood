@@ -17,6 +17,7 @@ exports[`<TicTacToe /> renders 1`] = `
       class="instructions"
     >
       Winner: 
+      
     </div>
     <button
       class="button"
@@ -32,57 +33,39 @@ exports[`<TicTacToe /> renders 1`] = `
       >
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
       </div>
       <div
         class="row"
       >
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
       </div>
       <div
         class="row"
       >
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
         <div
           class="Square"
-        >
-          Z
-        </div>
+        />
       </div>
     </div>
   </div>

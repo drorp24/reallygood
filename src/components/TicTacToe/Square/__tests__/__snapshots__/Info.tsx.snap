@@ -3,7 +3,5 @@
 exports[`<Square /> renders 1`] = `
 <div
   class="Square"
->
-  Z
-</div>
+/>
 `;
