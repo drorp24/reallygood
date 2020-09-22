@@ -2,6 +2,8 @@
 import React, { memo, useState } from "react";
 
 import Square from "./Square";
+import Player from "./Player";
+import Game from "./Game";
 import styles from "./styles.module.scss";
 import game from "../../config/game";
 
@@ -86,15 +88,27 @@ export default memo(function TicTacToe(): JSX.Element {
     setWinner(initialState.winner);
   };
 
+  // The fact Square passess onwards '...rest' arguments allows me to control its style from here
+  // TODO: Like Player & Game, Row & Board should also be defined outside and imported here
   const Row = ({ item, line }) => (
     <div className={styles.row}>
-      {item.map((_, row) => (
-        <Square
-          key={`${line}${row}`}
-          value={board[line][row]}
-          onClick={handleClick({ line, row })}
-        />
-      ))}
+      {item.map((_, row) => {
+        // I know it's meant to be rounded-corners' rectangles; this is a shortcut I'm doing
+        // border's color, width and style would be taken from some theme rather than hard coded
+        const border = "6.5px solid rgba(34, 99, 178, 0.5)";
+        const borderBottom = line === 0 ? border : "none";
+        const borderTop = line === 2 ? border : "none";
+        const borderRight = row === 0 ? border : "none";
+        const borderLeft = row === 2 ? border : "none";
+        return (
+          <Square
+            key={`${line}${row}`}
+            value={board[line][row]}
+            onClick={handleClick({ line, row })}
+            style={{ borderBottom, borderTop, borderRight, borderLeft }}
+          />
+        );
+      })}
     </div>
   );
 
@@ -105,21 +119,14 @@ export default memo(function TicTacToe(): JSX.Element {
 
   return (
     <div className={styles.TicTacToe}>
-      <div className={styles.Container}>
-        <div className={styles.instructions}>
-          Next player: {gameOver ? "Game Over" : currentPlayer}
-        </div>
-        <div className={styles.instructions}>
-          {/* I know you wanted to write nothing if no one wins */}
-          Winner: {gameOver && !winner ? "Tie!" : winner}
-        </div>
-        <button className={styles.button} type="button" onClick={reset}>
-          Reset
-        </button>
-
-        <div className={styles.Board}>
-          <Board />
-        </div>
+      <div className={styles.Player}>
+        <Player {...{ gameOver, currentPlayer, winner }} />
+      </div>
+      <div className={styles.Board}>
+        <Board />
+      </div>
+      <div className={styles.Game}>
+        <Game {...{ reset, gameOver, winner }} />
       </div>
     </div>
   );

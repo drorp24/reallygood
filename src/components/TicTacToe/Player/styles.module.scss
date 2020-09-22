@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-columns: [player1] 50% [player2] 50%;
+
+  .player1 {
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .next,
+    .symbol {
+      text-align: start;
+    }
+  }
+
+  .player2 {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .next,
+    .symbol {
+      text-align: end;
+    }
+  }
+
+  .next {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .playerBox {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+  }
+
+  .playerLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div:first-of-type {
+      margin-right: 2em;
+    }
+  }
+}

@@ -9,8 +9,10 @@ import styles from "./styles.module.scss";
 // To do that I would need to control the styling of the Square component from its parent
 // and '...rest' could help in that.
 export default memo(function Square({ value, onClick, ...rest }): JSX.Element {
+  // TODO: fix...
+  const color = value === "X" ? "#50a1d2" : "#333";
   return (
-    <div className={styles.Square} {...{ onClick, ...rest }}>
+    <div className={styles.Square} style={{ color }} {...{ onClick, ...rest }}>
       {value}
     </div>
   );
