@@ -34,11 +34,13 @@ const Player = ({ gameOver, currentPlayer, winner }) => {
     return "";
   };
 
+  // The `${styles.symbol} x` doesnt work
+  // but with css-in-js this should have been a piece of cake, without all this class concatenation
   return (
     <div className={styles.container}>
       <div className={styles.player1}>
         <div className={styles.playerBox}>
-          <div className={styles.symbol}>X</div>
+          <div className={`${styles.symbol} x`}>X</div>
           <div className={styles.playerLine}>
             <div>
               <img src={Captain} alt="Captain" />
@@ -50,7 +52,7 @@ const Player = ({ gameOver, currentPlayer, winner }) => {
       </div>
       <div className={styles.player2}>
         <div className={styles.playerBox}>
-          <div className={styles.symbol}>O</div>
+          <div className={`${styles.symbol} o`}>O</div>
           <div className={styles.playerLine}>
             <div>Player 2</div>
             <div>

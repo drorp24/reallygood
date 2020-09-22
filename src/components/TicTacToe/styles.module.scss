@@ -1,8 +1,8 @@
 .TicTacToe {
   display: grid;
-  grid-template-rows: [player] 15% [board] 50% [game] 35%;
-  grid-gap: 10px;
-  height: 95vh;
+  grid-template-rows: [player] 20% [board] 50% [game] 30%;
+  grid-gap: 5vh;
+  height: 85vh;
   font-weight: 700;
 
   .instructions {
