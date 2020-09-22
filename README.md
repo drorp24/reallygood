@@ -24,7 +24,7 @@ Only once the Logic PR is submitted, create a new branch deriving from the logic
 
 ![Preview](tic-tac-toe-preview.jpg)
 
-SVG files are available under [components/TicTacToe/assets](https://github.com/ReallyGood/challenge/tree/master/src/components/TicTacToe/assets)
+SVG files are available under [components/TicTacToe/assets](src/components/TicTacToe/assets)
 
 **Ping us to get a Zeplin invite to this project**. We understand this may be a lot, so try not to spend over two hours with this part, and prioritize as you see fit.
 
