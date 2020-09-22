@@ -1,7 +1,7 @@
 {
-  "name": "react-cool-starter",
-  "version": "3.11.1",
-  "description": "A starter boilerplate for a universal web application with the best development experience and best practices.",
+  "name": "really-good-challenge",
+  "version": "0.0.1",
+  "description": "The Really Good React challenge",
   "license": "MIT",
   "homepage": "https://github.com/wellyshen/react-cool-starter",
   "repository": "https://github.com/wellyshen/react-cool-starter",
@@ -31,7 +31,7 @@
     "stylelint",
     "prettier"
   ],
-  "author": "Welly Shen <hivoid19@gmail.com> (https://github.com/wellyshen)",
+  "author": "Ronny Orbach <ronny@reallygood.co.il> (https://github.com/RonnyO)",
   "main": "index.ts",
   "engines": {
     "node": ">=10",
