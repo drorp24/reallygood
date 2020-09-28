@@ -4,6 +4,8 @@ import { renderRoutes } from "react-router-config";
 import { Helmet } from "react-helmet";
 import { hot } from "react-hot-loader";
 
+import ErrorBoundary from "../components/ErrorBoundary";
+
 import config from "../config";
 // Import your global styles here
 import "normalize.css/normalize.css";
@@ -14,10 +16,12 @@ interface Route {
 }
 
 const App = ({ route }: Route) => (
-  <div className={styles.App}>
-    <Helmet {...config.APP} />
-    {renderRoutes(route.routes)}
-  </div>
+  <ErrorBoundary>
+    <div className={styles.App}>
+      <Helmet {...config.APP} />
+      {renderRoutes(route.routes)}
+    </div>
+  </ErrorBoundary>
 );
 
 export default hot(module)(App);

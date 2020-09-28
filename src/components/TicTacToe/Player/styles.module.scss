@@ -1,0 +1,60 @@
+.container {
+  display: grid;
+  grid-template-columns: [player1] 50% [player2] 50%;
+
+  .symbol {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px rgba(80, 161, 210, 0.3);
+    -webkit-text-stroke: 2px #ffffff;
+    &.x {
+      color: rgba(34, 99, 178, 0.5);
+    }
+    &.o {
+      color: #333;
+    }
+  }
+
+  .player1 {
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .next,
+    .symbol {
+      text-align: start;
+    }
+  }
+
+  .player2 {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .next,
+    .symbol {
+      text-align: end;
+    }
+  }
+
+  .next {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .playerBox {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+  }
+
+  .playerLine {
+    color: rgb(80, 161, 210);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    div:first-of-type {
+      margin-right: 2em;
+    }
+  }
+}

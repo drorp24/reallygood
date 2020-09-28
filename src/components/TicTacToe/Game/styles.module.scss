@@ -1,0 +1,11 @@
+.gameContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 10px;
+}
+
+.resetContainer {
+  display: flex;
+}

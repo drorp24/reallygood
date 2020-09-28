@@ -1,43 +1,52 @@
 .TicTacToe {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  background-color: #eee;
+  width: 300px;
+  border: 1px solid #888;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: [player] 2fr [board] 5fr [game] 3fr;
+  gap: 5vh;
+  font-weight: 700;
 
-  .Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  .instructions {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+  }
 
-    .instructions {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      font-weight: bold;
-      font-size: 16px;
-    }
+  .button {
+    margin-top: 15px;
+    margin-bottom: 16px;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(138, 202, 202);
+    color: white;
+    font-size: 16px;
+  }
 
-    .button {
-      margin-top: 15px;
-      margin-bottom: 16px;
-      width: 80px;
-      height: 40px;
-      background-color: rgb(138, 202, 202);
-      color: white;
-      font-size: 16px;
-    }
+  .Player {
+    grid-row: player;
+    display: grid;
+  }
 
-    .Board {
-      width: 208px;
-      display: flex;
-      background: #bbb;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      border: 3px solid #bbb;
-    }
+  .Board {
+    position: relative;
+    height: 300px;
+    grid-row: board;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-shadow: 1px 1px 1px rgba(80, 161, 210, 0.3);
+    -webkit-text-stroke: 2px #ffffff;
+  }
 
-    .row {
-      display: flex;
-    }
+  .Game {
+    grid-row: game;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
   }
 }

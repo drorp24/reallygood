@@ -10,12 +10,14 @@ exports[`<TicTacToe /> renders 1`] = `
     <div
       class="instructions"
     >
-      Next player: X
+      Next player: 
+      X
     </div>
     <div
       class="instructions"
     >
-      Winner: None
+      Winner: 
+      
     </div>
     <button
       class="button"

@@ -1,12 +1,14 @@
 @import "../theme/variables";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap");
 
 body {
-  background-color: $color-white;
   font-family: "Helvetica-Light", Helvetica, Arial, sans-serif;
 }
 
 .App {
   color: $color-dark-gray;
+  display: flex;
+  justify-content: center;
 
   .header {
     display: block;
