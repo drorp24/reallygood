@@ -16,7 +16,7 @@ const Player = ({ gameOver, currentPlayer, winner }) => {
     if (winner && winner === symbol) {
       return (
         <Badge
-          text="Winner"
+          text="Winner!"
           color="#fcbd11"
           background="rgba(251, 212, 58, 0.44)"
         >
@@ -40,7 +40,7 @@ const Player = ({ gameOver, currentPlayer, winner }) => {
     <div className={styles.container}>
       <div className={styles.player1}>
         <div className={styles.playerBox}>
-          <div className={`${styles.symbol} x`}>X</div>
+          <div className={styles.symbol + " " + styles.x}>X</div>
           <div className={styles.playerLine}>
             <div>
               <img src={Captain} alt="Captain" />
@@ -52,7 +52,7 @@ const Player = ({ gameOver, currentPlayer, winner }) => {
       </div>
       <div className={styles.player2}>
         <div className={styles.playerBox}>
-          <div className={`${styles.symbol} o`}>O</div>
+          <div className={styles.symbol + " " + styles.o}>O</div>
           <div className={styles.playerLine}>
             <div>Player 2</div>
             <div>

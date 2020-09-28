@@ -1,0 +1,28 @@
+.Border {
+  position: absolute;
+  background-color: #50a1d2;
+  opacity: 0.5;
+  border-radius: 5px;
+  &.line {
+    width: 100%;
+    height: 10px;
+    left: 0;
+    &.firstLine {
+      top: calc(33.3% - 5px);
+    }
+    &.secondLine {
+      top: calc(66.6% - 5px);
+    }
+  }
+  &.row {
+    width: 10px;
+    height: 100%;
+    top: 0;
+  }
+  &.firstRow {
+    left: calc(33.3% - 5px);
+  }
+  &.secondRow {
+    left: calc(66.6% - 5px);
+  }
+}

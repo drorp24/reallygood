@@ -3,6 +3,7 @@
   grid-template-columns: [player1] 50% [player2] 50%;
 
   .symbol {
+    font-size: 1.5em;
     text-shadow: 1px 1px 1px rgba(80, 161, 210, 0.3);
     -webkit-text-stroke: 2px #ffffff;
     &.x {
@@ -12,11 +13,8 @@
       color: #333;
     }
   }
-  .symbol.x {
-    font-size: 10vh;
-  }
+
   .player1 {
-    width: 80%;
     justify-self: start;
     display: flex;
     flex-direction: column;
@@ -28,7 +26,6 @@
   }
 
   .player2 {
-    width: 80%;
     justify-self: end;
     display: flex;
     flex-direction: column;
@@ -52,9 +49,10 @@
   }
 
   .playerLine {
+    color: rgb(80, 161, 210);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     div:first-of-type {
       margin-right: 2em;
     }

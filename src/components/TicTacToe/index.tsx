@@ -4,6 +4,9 @@ import React, { memo, useState } from "react";
 import Square from "./Square";
 import Player from "./Player";
 import Game from "./Game";
+import Win from "./Win";
+import Border from "./Border";
+
 import styles from "./styles.module.scss";
 import game from "../../config/game";
 
@@ -24,6 +27,7 @@ const initialState = {
   moves: 0,
   gameOver: false,
   winner: "",
+  state: {},
 };
 
 export default memo(function TicTacToe(): JSX.Element {
@@ -36,6 +40,7 @@ export default memo(function TicTacToe(): JSX.Element {
   const [moves, setMoves] = useState(initialState.moves);
   const [gameOver, setGameOver] = useState(initialState.gameOver);
   const [winner, setWinner] = useState(initialState.winner);
+  const [state, setState] = useState(initialState.state);
 
   const togglePlayer = () =>
     setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
@@ -43,23 +48,43 @@ export default memo(function TicTacToe(): JSX.Element {
   // Since we're checking this following every move, a potential win can only occur in either
   //   -- the last move's line or row (i.e., no need to check all other lines and rows), or
   //   -- any of the 2 diagonals (in case line & row happen to be placed on either)
-  const winning = ({ line, row }) =>
-    board[line].every((_, row) => board[line][row] === currentPlayer) ||
-    board.reduce(
-      (acc, _, line) => acc && board[line][row] === currentPlayer,
-      true
-    ) ||
-    (line === row &&
+  const winning = ({ line, row }) => {
+    if (board[line].every((_, row) => board[line][row] === currentPlayer)) {
+      return { win: true, line };
+    }
+
+    if (
+      board.reduce(
+        (acc, _, line) => acc && board[line][row] === currentPlayer,
+        true
+      )
+    ) {
+      return { win: true, row };
+    }
+
+    if (
+      line === row &&
       board.reduce(
         (acc, _, line) => acc && board[line][line] === currentPlayer,
         true
-      )) ||
-    (line + row === dimensions - 1 &&
+      )
+    ) {
+      return { win: true, diagonal: "left" };
+    }
+
+    if (
+      line + row === dimensions - 1 &&
       board.reduce(
         (acc, _, line) =>
           acc && board[line][dimensions - line - 1] === currentPlayer,
         true
-      ));
+      )
+    ) {
+      return { win: true, diagonal: "right" };
+    }
+
+    return { win: false };
+  };
 
   // By referring to the 'board' variable from the closure, handleClick can be passed to Square components
   // and is guaranteed to get board's most current value
@@ -68,8 +93,10 @@ export default memo(function TicTacToe(): JSX.Element {
       board[line][row] = currentPlayer;
       setBoard(board);
       setMoves(moves + 1);
-      if (winning({ line, row })) {
+      const stateCheck = winning({ line, row });
+      if (stateCheck.win) {
         setWinner(currentPlayer);
+        setState(stateCheck);
         setGameOver(true);
       } else if (moves === squares) {
         setGameOver(true);
@@ -86,6 +113,7 @@ export default memo(function TicTacToe(): JSX.Element {
     setMoves(initialState.moves);
     setGameOver(initialState.gameOver);
     setWinner(initialState.winner);
+    setState(initialState.state);
   };
 
   // The fact Square passess onwards '...rest' arguments allows me to control its style from here
@@ -93,29 +121,31 @@ export default memo(function TicTacToe(): JSX.Element {
   const Row = ({ item, line }) => (
     <div className={styles.row}>
       {item.map((_, row) => {
-        // I know it's meant to be rounded-corners' rectangles; this is a shortcut I'm doing
-        // border's color, width and style would be taken from some theme rather than hard coded
-        const border = "6.5px solid rgba(34, 99, 178, 0.5)";
-        const borderBottom = line === 0 ? border : "none";
-        const borderTop = line === 2 ? border : "none";
-        const borderRight = row === 0 ? border : "none";
-        const borderLeft = row === 2 ? border : "none";
         return (
           <Square
             key={`${line}${row}`}
             value={board[line][row]}
             onClick={handleClick({ line, row })}
-            style={{ borderBottom, borderTop, borderRight, borderLeft }}
           />
         );
       })}
     </div>
   );
 
-  const Board = () =>
-    board.map((item, line) => {
-      return <Row key={line} {...{ item, line }} />;
-    });
+  const Board = () => (
+    <>
+      {board.map((item, line) => (
+        <Row key={line} {...{ item, line }} />
+      ))}
+      {[0, 1].map((_, i) => (
+        <>
+          <Border line={i} />
+          <Border row={i} />
+        </>
+      ))}
+      <Win {...state} />
+    </>
+  );
 
   return (
     <div className={styles.TicTacToe}>
